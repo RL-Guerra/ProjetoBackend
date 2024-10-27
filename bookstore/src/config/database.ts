@@ -1,6 +1,7 @@
 import { Pool } from 'pg';
 
-const connectionString = '${{ Postgres.DATABASE_URL }}';
+// Substitua pela sua string de conexão do Render.com
+const connectionString = 'postgresql://postgres:xCvezjBRwVNeUtHwiviwstKapljBJzpf@junction.proxy.rlwy.net:43448/railway';
 
 const pool = new Pool({
   connectionString,

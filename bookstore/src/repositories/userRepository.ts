@@ -3,6 +3,9 @@ import pool from '../config/database';
 import { User } from '../models/userModel';
 
 export class UserRepository {
+  getAllUsers() {
+    throw new Error('Method not implemented.');
+  }
   private pool: Pool = pool;
 
   async getUserByEmail(email: string): Promise<User | null> {
