@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { register, login, getAllBooks, addBook } from './controllers.test';
+import { register, login, getAllBooks, addBook } from '../controllers'; // Ajuste para o caminho correto se necessário
 import { AuthService } from '../services/authService';
 import { BookRepository } from '../repositories/bookRepository';
 
@@ -68,23 +68,25 @@ describe('Controllers', () => {
     it('should get all books', async () => {
       const req = mockRequest({});
       const res = mockResponse();
-      (BookRepository.prototype.getAllBooks as jest.Mock).mockResolvedValue([{ title: 'Book 1' }]);
+      (BookRepository.prototype.getAllBooks as jest.Mock).mockResolvedValue([{ id: 1, title: 'Book 1' }]); // Inclua um id se necessário
 
       await getAllBooks(req, res);
 
       expect(res.status).toHaveBeenCalledWith(200);
-      expect(res.json).toHaveBeenCalledWith([{ title: 'Book 1' }]);
+      expect(res.json).toHaveBeenCalledWith([{ id: 1, title: 'Book 1' }]); // Inclua um id se necessário
     });
 
     it('should add a book', async () => {
       const req = mockRequest({ title: 'New Book', author: 'Author', price: 20 });
       const res = mockResponse();
-      (BookRepository.prototype.addBook as jest.Mock).mockResolvedValue({ id: 1, title: 'New Book' });
+      (BookRepository.prototype.addBook as jest.Mock).mockResolvedValue({ id: 1, title: 'New Book', author: 'Author', price: 20 }); // Inclua todas as propriedades
 
       await addBook(req, res);
 
       expect(res.status).toHaveBeenCalledWith(201);
-      expect(res.json).toHaveBeenCalledWith({ id: 1, title: 'New Book' });
+      expect(res.json).toHaveBeenCalledWith({ id: 1, title: 'New Book', author: 'Author', price: 20 }); // Inclua todas as propriedades
     });
   });
 });
+
+export { register, login, getAllBooks, addBook }; 
