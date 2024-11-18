@@ -2,7 +2,7 @@ import express from "express";
 import userRoutes from "./routes/authRoutes";
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 
 app.use(express.json());
 
