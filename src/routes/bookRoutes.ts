@@ -1,9 +1,8 @@
-import express from 'express';
-import bookRoutes from './bookRoutes';
+import { Router } from 'express';
+import { addBook } from '../controllers/bookController';
 
-const app = express();
+const router = Router();
 
-app.use(express.json());
-app.use('/api', bookRoutes);
+router.post("/api", addBook);
 
-export default app;
+export default router;
