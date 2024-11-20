@@ -14,3 +14,10 @@ export const addBook = async (req: Request, res: Response) => {
   const book = await bookRepository.addBook(title, author, price);
   res.status(201).json(book);
 };
+
+export const getBook = async (req: Request, res: Response) => {
+  
+
+  const book = await bookRepository.getAllBooks();
+  res.status(200).json(book);
+};
