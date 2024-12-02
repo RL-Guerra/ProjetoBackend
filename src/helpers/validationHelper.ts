@@ -13,10 +13,15 @@ export const isValidpasswordHash = (passwordHash: string): boolean => {
   return passwordRegex.test(passwordHash);
 };
 
+export const isValidTitle = (title: string): boolean => {
+  return title.length >= 3;
+};
+
 export const isValidPrice = (price: number): boolean => {
   return price > 0;
 };
 
-export const isValidTitle = (title: string): boolean => {
-  return title.length >= 3;
+export const isValidAuthor = (author: string): boolean => {
+  const authorRegex = /^[A-Za-zÀ-ÖØ-öø-ÿ\s]{3,}$/;
+  return authorRegex.test(author);
 };
