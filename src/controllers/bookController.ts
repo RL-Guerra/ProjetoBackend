@@ -1,5 +1,3 @@
-// controllers/bookController.ts
-
 import { Request, Response } from 'express';
 import { BookRepository } from '../repositories/bookRepository';
 import { isValidTitle, isValidAuthor, isValidPrice } from '../helpers/validationHelper';
