@@ -106,4 +106,7 @@ As validações foram implementadas para garantir a integridade e consistência 
 ## 7. **Conclusão**  
 O sistema de gerenciamento de livraria foi desenvolvido com foco em segurança, validação de dados e organização modular. Ao utilizar o padrão MVC, o projeto garante manutenibilidade e escalabilidade, servindo como uma base sólida para futuras melhorias. As funcionalidades CRUD, validações centralizadas e arquitetura bem estruturada tornam o sistema confiável e eficiente, alinhado às melhores práticas de desenvolvimento.  
 
+
+## 8. **link do front**
+https://github.com/BabiSato/admin
 ---  
